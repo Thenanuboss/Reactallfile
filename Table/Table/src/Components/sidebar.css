@@ -1,0 +1,11 @@
+.sidebar {
+    height: 92vh;
+    width: 15%;
+    background: linear-gradient(to right, #48e9d4, #754cf0);
+    text-align: center;
+    font-size:30px ;
+    position: fixed;
+    top: 58px;
+    height: calc(100vh - 8vh);
+    
+}

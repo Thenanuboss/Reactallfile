@@ -1,0 +1,131 @@
+import React, { useEffect, useState } from "react";
+import "./App.css";
+
+export default function App() {
+  const [input, setInput] = useState({
+    name: "",
+    email: "",
+    pass: ""
+  });
+
+  const [file, setFile] = useState(null);
+
+  const [arr, setArr] = useState(() => {
+    const storedData = localStorage.getItem("Data");
+    return storedData ? JSON.parse(storedData) : [];
+  });
+
+  // const [arr, setArr] = useState([]);
+
+  const handleFileChange = (e) => {
+    const image = e.target.files[0];
+    if (image) {
+      setFile(image);
+    }
+  };
+
+  const handleFileSubmit = (e) => {
+    e.preventDefault();
+
+    if (input.name && input.email && input.pass && file) {
+      const fileURL = URL.createObjectURL(file);
+      setArr([
+        ...arr,
+        {
+          name: input.name,
+          email: input.email,
+          pass: input.pass,
+          file: fileURL
+        }
+      ]);
+    } else {
+      alert("Enter Valid Data...");
+    }
+
+    setInput({
+      name: "",
+      email: "",
+      pass: ""
+    });
+  };
+
+  useEffect(() => {
+    localStorage.setItem("Data", JSON.stringify(arr));
+  }, [arr]);
+
+  return (
+    <div>
+      <form onSubmit={handleFileSubmit}>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          value={input.name}
+          onChange={(e) => setInput({ ...input, name: e.target.value })}
+        />
+        <br />
+        <br />
+        <input
+          type="email"
+          placeholder="Enter Email"
+          value={input.email}
+          onChange={(e) => setInput({ ...input, email: e.target.value })}
+        />
+        <br />
+        <br />
+        <input
+          type="password"
+          placeholder="Enter Password"
+          value={input.pass}
+          onChange={(e) => setInput({ ...input, pass: e.target.value })}
+        />
+        <br />
+        <br />
+        <input type="file" onChange={handleFileChange} />
+        <br />
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+
+      <br />
+      <br />
+
+      {arr.length > 0 ? (
+        <table border={2} cellSpacing={0} width="100%">
+          <thead>
+            <tr>
+              <th>Sr No</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Image</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {arr.map((ele, index) => {
+              return (
+                <>
+                  <tr>
+                    <td>{index + 1}</td>
+                    <td>{ele.name}</td>
+                    <td>{ele.email}</td>
+                    <td>{ele.pass}</td>
+                    <td>
+                      <img src={ele.file} alt="" width="50%" />
+                    </td>
+                    <td>
+                      <button>Edit</button> <button>Delete</button>
+                    </td>
+                  </tr>
+                </>
+              );
+            })}
+          </tbody>
+        </table>
+      ) : (
+        ""
+      )}
+    </div>
+  );
+}

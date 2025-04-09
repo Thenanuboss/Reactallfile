@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    
+}
+
+
+header {
+display: flex;
+justify-content: space-around;
+align-items: center;
+background: linear-gradient(to right, #48e9d4, #754cf0);
+height: 8vh;
+position: fixed;
+width: 100%;
+top: 0;
+}
+
+ul {
+    display: flex;
+    gap: 50px;
+}

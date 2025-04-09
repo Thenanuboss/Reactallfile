@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+</body>
+
+</html>
+
+
+<script>
+    <!-- merging array -->
+
+
+let arr1 = [1,2,3]
+let arr2 = [4,5,6]
+
+let arr3 = arr1.concat(arr2);
+console.log(arr3)
+
+
+// 2nd method
+
+let arr4 = [...arr1, ...arr2];
+console.log(arr4)
+
+// 3rd method
+
+arr2.push(...arr1);
+console.log(arr2)
+
+
+// object merging
+
+let obj = {
+    name : "katha",
+    age : 20,
+    city : "ahmedabad"
+}
+
+let obj1 = {
+    name : "Hardik",
+    age : 32,
+    city : "ahmedabad"
+}
+
+
+let obj3 = {...obj1, ...obj2}
+console.log(obj3)
+
+
+
+
+</script>

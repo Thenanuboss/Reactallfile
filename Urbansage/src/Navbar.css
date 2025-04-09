@@ -1,0 +1,30 @@
+header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    background-color: rgb(255, 247, 12);
+    padding: 0px 50px;
+    color: green;  /* Change this color as per your choice */
+
+}
+
+/* Navbar List */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+}
+
+/* Change font color of links */
+nav ul li a {
+    text-decoration: none;
+    color: green;  /* Change this color as per your choice */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+    color: red;  /* Color changes to red on hover */
+}
