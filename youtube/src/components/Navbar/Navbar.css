@@ -1,0 +1,77 @@
+.navbar {
+  padding: 0 16px;
+  height: 56px;
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar-brand {
+  color: #000 !important;
+  font-size: 20px;
+  padding: 0 16px;
+}
+
+.youtube-logo {
+  color: #ff0000;
+  margin-right: 8px;
+}
+
+.search-bar {
+  width: 50%;
+  max-width: 640px;
+}
+
+.search-input {
+  border-radius: 20px 0 0 20px !important;
+  border: 1px solid #ccc !important;
+  box-shadow: none !important;
+  height: 40px;
+}
+
+.search-button {
+  border-radius: 0 20px 20px 0 !important;
+  background-color: #f8f8f8 !important;
+  border: 1px solid #ccc !important;
+  border-left: none !important;
+  color: #606060 !important;
+  height: 40px;
+  width: 64px;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-icon-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #030303;
+  transition: background-color 0.2s;
+}
+
+.nav-icon-btn:hover {
+  background-color: #f2f2f2;
+}
+
+.sign-in-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #065fd4;
+  border-radius: 18px;
+  color: #065fd4;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+.sign-in-btn:hover {
+  background-color: #def1ff;
+}
